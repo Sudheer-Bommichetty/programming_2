@@ -9,13 +9,14 @@ from sklearn.neighbors import kneighbors_graph
 from sklearn.preprocessing import StandardScaler
 from itertools import cycle, islice
 import scipy.io as io
-from scipy.cluster.hierarchy import dendrogram, linkage  #
-
-# import plotly.figure_factory as ff
+from scipy.cluster.hierarchy import dendrogram, linkage  
 import math
 from sklearn.cluster import AgglomerativeClustering
 import pickle
 import utils as u
+from sklearn.datasets import make_circles, make_moons, make_blobs
+from sklearn.cluster import KMeans
+from sklearn.metrics import silhouette_score
 
 
 # ----------------------------------------------------------------------
@@ -30,9 +31,7 @@ In the first task, you will explore how k-Means perform on datasets with diverse
 # the question asked. 
 
 
-from sklearn.datasets import make_circles, make_moons, make_blobs
-from sklearn.cluster import KMeans
-from sklearn.metrics import silhouette_score
+
 
 def fit_kmeans(dataset, n_clusters, random_state=42):
     X, y = dataset
